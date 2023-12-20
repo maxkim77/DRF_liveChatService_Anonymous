@@ -1,8 +1,8 @@
-#urls.py
+# urls.py
 from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("", views.createroom, name="createroom"),
-    path("<str:room_name>/", views.chatroom, name="chatroom"),
+    # DRF 뷰 URL 패턴
+    path('api/chat-messages/', views.ChatMessageListCreateView.as_view(), name='chat-message-list-create'),
 ]
